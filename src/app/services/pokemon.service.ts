@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Pokemon} from '../models';
+import {Pokemon} from '../models/pokemon';
 import {throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
+import {Pokemons} from '../models/pokemons';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,10 @@ export class PokemonService {
   private baseUrl = 'https://pokeapi.co/api/v2/';
 
   constructor(private http: HttpClient) {
+  }
+
+  getPokemons(offset = 24) {
+    return this.http.get<Pokemons>(`${this.baseUrl}pokemon/?limit=24&offset=${offset}`);
   }
 
   getPokemon(id: string | number) {

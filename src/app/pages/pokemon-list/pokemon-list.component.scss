@@ -1,0 +1,35 @@
+.pokemons-list {
+  margin-top: 21px;
+
+  .card-deck {
+    justify-content: center;
+  }
+
+  .pokemon {
+    flex-basis: 144px;
+    text-align: center;
+    cursor: pointer;
+
+    .card-title {
+      text-transform: capitalize;
+    }
+
+    .pokemon-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 158px;
+      min-height: 158px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top;
+    }
+
+    img {
+      min-width: 158px;
+      min-height: 158px;
+    }
+  }
+}
+
+

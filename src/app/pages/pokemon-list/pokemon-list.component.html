@@ -1,0 +1,27 @@
+<div class="container pokemons-list">
+
+  <div *ngIf="!pokemons">
+    <img [src]="'./assets/img/pokeloading.gif'" alt="Carregando...">
+  </div>
+  <div *ngIf="pokemons" class="d-flex flex-column align-items-center">
+    <div class="card-deck">
+      <div class="card mb-2 pokemon animated jello"
+           *ngFor="let pokemonInfo of pokemons.results"
+           [ngClass]="{shadow: pokemonInfo.over}" (mouseover)="pokemonInfo.over=true" (mouseleave)="pokemonInfo.over=false"
+           [routerLink]="['/pokemon/', pokemonInfo.name]">
+        <div class="card-img-top pokemon-image" [ngStyle]="{'background-image': pokemonInfo.pokemon ? 'none' : './assets/img/pokeloading.gif'}" >
+          <img *ngIf="pokemonInfo.pokemon != null && pokemonInfo.pokemon.sprites.front_default" class="card-img-top animated flipInY" [src]="pokemonInfo.pokemon.sprites.front_default" alt="Pokemon">
+          <h3 *ngIf="pokemonInfo.pokemon != null && !pokemonInfo.pokemon.sprites.front_default">
+            Sem Imagem
+          </h3>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ pokemonInfo.name }}</h5>
+        </div>
+      </div>
+    </div>
+
+    <ngb-pagination [collectionSize]="pokemons.count" [pageSize]="24" [(page)]="page" [maxSize]="7" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+  </div>
+
+</div>

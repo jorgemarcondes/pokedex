@@ -1,0 +1,32 @@
+.pokemon-detail {
+
+  .pokemon {
+    margin-top: 21px;
+    flex-direction: row;
+    padding: 13px;
+
+    .pokemon-baseinfo {
+      flex: 1;
+      padding: 21px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-transform: capitalize;
+    }
+
+    .pokemon-info {
+      flex: 2;
+      padding: 21px;
+
+      .pokemon-stat {
+        text-transform: capitalize;
+      }
+    }
+
+  }
+
+  .pokemon-image {
+    max-width: 144px;
+  }
+
+}

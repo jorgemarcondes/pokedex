@@ -1,0 +1,15 @@
+<div class="container pokemon-detail">
+  <div class="card mb-2 pokemon animated flipInY d-flex align-items-center">
+    <div class="pokemon-baseinfo" *ngIf="pokemon">
+      <img class="card-img-top pokemon-image animated flipInY" [src]="pokemon.sprites.front_default" alt="Pokemon">
+      <h2>{{ pokemon.name }}</h2>
+
+    </div>
+    <div class="pokemon-info">
+      <div *ngFor="let stats of pokemon.stats">
+        <span class="pokemon-stat">{{ stats.stat.name }}</span>
+        <ngb-progressbar type="info" [value]="stats.base_stat"><span>{{stats.base_stat}}</span></ngb-progressbar>
+      </div>
+    </div>
+  </div>
+</div>
