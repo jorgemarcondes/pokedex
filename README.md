@@ -1,5 +1,3 @@
-# Projuris
-
 Para Rodar esse sistema é necessário ter instalado o **NodeJS 6+** e também o **Angular Cli**
 
 ## Servidor de Testes
