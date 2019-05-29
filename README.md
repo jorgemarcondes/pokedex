@@ -1,5 +1,9 @@
 Para Rodar esse sistema é necessário ter instalado o **NodeJS 6+** e também o **Angular Cli**
 
+## API Utilizada
+Congratulations a 
+https://pokeapi.co/api/v2/
+
 ## Servidor de Testes
 
 Rode o comando `npm install`
